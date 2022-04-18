@@ -21,7 +21,7 @@ public class Sentinel {
         sleep(3000);
         
         //最小订单成交金额 举例如果设置成50 那么订单要超过50才会下单
-        double minOrderPrice = 0;
+        double minOrderPrice = 30;
 
         //执行任务请求间隔时间最小值
         int sleepMillisMin = 30000;

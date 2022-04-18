@@ -12,10 +12,10 @@ public class UserConfig {
     public static final String cityId = "0101";//默认上海
 
     //站点id
-    public static final String stationId = "";
+    public static final String stationId = "5b504229c0a1eac91e8b4bbf";
 
     //收货地址id
-    public static final String addressId = "";
+    public static final String addressId = "624f067a1604f70001a39e9b";
 
     /**
      * 确认收货地址id和站点id
@@ -43,12 +43,12 @@ public class UserConfig {
         headers.put("referer", "https://servicewechat.com/wx1e113254eda17715/425/page-frame.html");
 
         // ------------  填入以下6项 上面不要动 ------------
-        headers.put("ddmc-device-id", "");
-        headers.put("cookie", "");
-        headers.put("ddmc-longitude", "");
-        headers.put("ddmc-latitude", "");
-        headers.put("ddmc-uid", "");
-        headers.put("user-agent", "");
+        headers.put("ddmc-device-id", "osP8I0YRse9Wel82q5trBcoWe6L0");
+        headers.put("cookie", "DDXQSESSID=4cc872ff40f7744c85336f28958ce23c");
+        headers.put("ddmc-longitude", "121.449707");
+        headers.put("ddmc-latitude", "31.282588");
+        headers.put("ddmc-uid", "6245708456d86b0001c1ac52");
+        headers.put("user-agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.20(0x18001428) NetType/WIFI Language/zh_CN");
         return headers;
     }
 
@@ -75,8 +75,8 @@ public class UserConfig {
         body.put("openid", headers.get("ddmc-device-id"));
 
         // ------------  填入这2项上面不要动 ------------
-        body.put("s_id", "");
-        body.put("device_token", "");
+        body.put("s_id", "4cc872ff40f7744c85336f28958ce23c");
+        body.put("device_token", "WHJMrwNw1k%2FFKPjcOOgRd%2BDT6ABbfvktPGHJTmn3iKG9YKUnmGE4MoIaDBopohzSvTDqAonzPTXBiuHqRAuAja4ZLWSxVFmwEdCW1tldyDzmauSxIJm5Txg%3D%3D1487582755342");
         return body;
     }
 }

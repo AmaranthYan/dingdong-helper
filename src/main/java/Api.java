@@ -296,6 +296,27 @@ public class Api {
         return null;
     }
 
+    /**
+     * 检查运力
+     *
+     * @return 是否有运力
+     */
+    public static boolean checkDeliveryCapacity() {
+        try {
+            HttpRequest httpRequest = HttpUtil.createGet("https://maicai.api.ddxq.mobi/orderFlashSale/check");
+            Map<String, String> headers = UserConfig.getHeaders();
+            httpRequest.addHeaders(headers);
+            Map<String, String> request = UserConfig.getBody(headers);
+            httpRequest.form(sign(request));
+
+            String body = httpRequest.execute().body();
+            JSONObject object = JSONUtil.parseObj(body);
+            return isSuccess(object, "检查运力");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     /**
      * 获取配送信息
@@ -305,6 +326,9 @@ public class Api {
      * @return 配送信息
      */
     public static Map<String, Object> getMultiReserveTime(String addressId, Map<String, Object> cartMap) {
+        if(!checkDeliveryCapacity()) {
+            return null;
+        }
         try {
             HttpRequest httpRequest = HttpUtil.createPost("https://maicai.api.ddxq.mobi/order/getMultiReserveTime");
             Map<String, String> headers = UserConfig.getHeaders();
